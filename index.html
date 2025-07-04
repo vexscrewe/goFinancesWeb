@@ -10,61 +10,82 @@
 
 </html>
 <body>
-    <header>
-        <section id="container">
-            <div id="user">
-                <img src="assets/images/ciri.png" alt="icon">
-                <p>Olá,<br>Estudante</p>
-                
-            </div>
+  <header>
+    <div class="header-content">
+      <div class="user-info">
+        <img src="assets/images/ciri.png" alt="Avatar" class="avatar" />
+        <div>
+          <p>Olá,</p>
+          <strong>Estudante!</strong>
+        </div>
+      </div>
+      <button id="new-transaction-btn" class="btn new-transaction">Nova Transação</button>
+    </div>
+  </header>
 
-            <div id="transaction">
-                <p>Nova Transação</p>
-            </div>
+  <main>
+    <!-- Cards -->
+    <section class="cards">
+      <div class="card entrada">
+        <header>
+          <p>Entradas</p>
+           <i class="fa-regular fa-circle-up"></i>
+        </header>
+        <h2 id="card-entrada">R$ 0,00</h2>
+        <p id="desc-entrada">Nenhuma entrada</p>
+      </div>
+      <div class="card saida">
+        <header>
+          <p>Saídas</p>
+          <i class="fa-regular fa-circle-down"></i>
+        </header>
+        <h2 id="card-saida">R$ 0,00</h2>
+        <p id="desc-saida">Nenhuma saída</p>
+      </div>
+      <div class="card total">
+        <header>
+          <p>Total</p>
+          <i class="fa-solid fa-dollar-sign"></i>
+        </header>
+        <h2 id="card-total">R$ 0,00</h2>
+        <p id="desc-total">Sem transações</p>
+      </div>
+    </section>
 
-        </section>
-    </header>
+    <!-- Table -->
+    <section class="transactions-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody id="transactions-body">
+          <!-- Linhas geradas via JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-    <main>
-        <section id="cards">
-            <div id="card1" class="card">
-                <div class="div1">
-                    <p>Entrada</p>
-                    <i class="fa-regular fa-circle-up"></i>
-                </div>
-                <div class="div2">
-                    <h1>R$ 17.300</h1>
-                    <p>Última entrada 13 de abril</p>
-                </div>
-            </div>
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">×</button>
+      <h2>Cadastrar transação</h2>
+      <input type="text" id="input-title" placeholder="Título" />
+      <input type="number" id="input-amount" placeholder="Valor" />
+      <div class="transaction-type">
+        <button id="type-entrada" class="type-btn entrada active">Entrada</button>
+        <button id="type-saida" class="type-btn saida">Saída</button>
+      </div>
+      <input type="text" id="input-category" placeholder="Categoria" />
+      <button id="submit-transaction" class="btn submit">Cadastrar</button>
+    </div>
+  </div>
 
-            <div id="card2" class="card">
-
-                <div class="div1">
-                    <p>Entrada</p>
-                    <i class="fa-regular fa-circle-down"></i>
-                </div>
-                <div class="div2">
-                    <h1>R$ 17.300</h1>
-                    <p>Última entrada 13 de abril</p>
-                </div>
-
-            </div>
-
-            <div id="card3" class="card">
-
-                <div class="div1">
-                    <p>Entrada</p>
-                    <i class="fa-solid fa-dollar-sign"></i>
-                </div>
-                <div class="div2">
-                    <h1>R$ 17.300</h1>
-                    <p>Última entrada 13 de abril</p>
-                </div>
-
-            </div>
-        </section>
-    </main>
-    
+  <script src="assets/javascript/script.js"></script>
 </body>
 </html>
